@@ -1,0 +1,29 @@
+// Last modified by Mathieu Theriault
+// On 25/09/2020
+// Defines default styles for Modal component
+    
+.modal-wrapper
+    @include pos
+    @include size(100%)
+    @include flexcenter
+    backdrop-filter: blur(5px)
+    -webkit-backdrop-filter: blur(5px)
+    background-color: #00000069
+    z-index: 11
+    animation: fadeIn 500ms ease-out forwards
+    
+    .modal
+        background-color: white
+        box-shadow: 0 1.1px 2.2px rgba(0, 0, 0, 0.02),0 2.7px 5.3px rgba(0, 0, 0, 0.028),0 5px 10px rgba(0, 0, 0, 0.035),0 8.9px 17.9px rgba(0, 0, 0, 0.042),0 16.7px 33.4px rgba(0, 0, 0, 0.05),0 40px 80px rgba(0, 0, 0, 0.07)
+        position: relative
+        padding: 3em
+        z-index: 1
+        .button
+            margin: 0 1em
+            z-index: 0
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+    100%
+        opacity: 1

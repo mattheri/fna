@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fna/build/static/css/main.a1b3802d.chunk.css",
+    "main.js": "/fna/build/static/js/main.80f76f3e.chunk.js",
+    "main.js.map": "/fna/build/static/js/main.80f76f3e.chunk.js.map",
+    "runtime-main.js": "/fna/build/static/js/runtime-main.d0fc12d8.js",
+    "runtime-main.js.map": "/fna/build/static/js/runtime-main.d0fc12d8.js.map",
+    "static/js/2.3ef6e4db.chunk.js": "/fna/build/static/js/2.3ef6e4db.chunk.js",
+    "static/js/2.3ef6e4db.chunk.js.map": "/fna/build/static/js/2.3ef6e4db.chunk.js.map",
+    "index.html": "/fna/build/index.html",
+    "precache-manifest.974994d949bc8f597b497985c047675e.js": "/fna/build/precache-manifest.974994d949bc8f597b497985c047675e.js",
+    "service-worker.js": "/fna/build/service-worker.js",
+    "static/css/main.a1b3802d.chunk.css.map": "/fna/build/static/css/main.a1b3802d.chunk.css.map",
+    "static/js/2.3ef6e4db.chunk.js.LICENSE.txt": "/fna/build/static/js/2.3ef6e4db.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d0fc12d8.js",
+    "static/js/2.3ef6e4db.chunk.js",
+    "static/css/main.a1b3802d.chunk.css",
+    "static/js/main.80f76f3e.chunk.js"
+  ]
+}

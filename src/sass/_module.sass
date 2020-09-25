@@ -1,0 +1,33 @@
+// Last modified by Mathieu Theriault
+// On 25/09/2020
+// Defines default styles for generic Module component
+
+.module
+    min-height: 90vh
+    @include flexcenter
+    .container
+        @include flexcenter(column)
+        position: relative
+        padding-top: 20vh
+        padding-bottom: 3rem
+        align-self: flex-start
+        form
+            width: 30%
+            min-width: 300px
+        &::before
+            content: attr(data-content)
+            position: absolute
+            @include size(100%)
+            top: 3rem
+            z-index: 1
+            display: flex
+            justify-content: center
+            font-family: $fontBold
+            font-size: 3rem
+            color: $purpleMain
+        &:nth-child(odd)
+            background-color: #ecf0f1
+    .btn
+        z-index: 1
+        max-height: 3rem
+        @include pos(fixed, 1em)

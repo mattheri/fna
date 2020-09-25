@@ -1,0 +1,176 @@
+// Last modified by Mathieu Theriault
+// On 24/08/2020
+// Defines default styles for component ContextNav
+
+.context-nav-button
+    @include posr(fixed, 1rem)
+    @include size(3.5rem)
+    border-radius: 50%
+    @include flexcenter
+    z-index: 10
+
+    .context-nav-button-container
+        cursor: pointer
+        background-color: $greenMain
+        @include size(100%)
+        border-radius: 50%
+        @include flexcenter(column)
+        div
+            @include size(2em, 4px)
+            background-color: white
+            border-radius: 15px
+            @for $b from 1 through 3
+                &:nth-child(#{$b})
+                    animation: closeAnimation#{$b} 500ms forwards
+            &:nth-child(2)
+                margin: 0.3em 0
+    .context-nav-container
+        position: relative
+        .context-nav
+            @include posr(absolute, 1.5rem, 0)
+            @include size(10rem, 100%)
+            background-color: black
+
+            ul
+                list-style: none
+                li
+                    @include size(10rem, 2rem)
+                    border-radius: 25px
+                    background-color: $greenMain
+                    @include flexcenter
+                    margin: 1rem 0
+                    transition: transform 500ms, opacity 300ms
+                    @for $i from 1 through 10
+                        &:nth-child(#{$i})
+                            transition-delay: $i * 200+ms
+                            transform: translateX(100%)
+                            opacity: 0
+                    a
+                        color: white
+                        font-family: $fontBold
+                        text-decoration: none
+.show
+    .context-nav-button-container
+        div
+            @for $b from 1 through 3
+                &:nth-child(#{$b})
+                    animation: openAnimation#{$b} 500ms forwards
+                 
+                
+    .context-nav-container
+        .context-nav
+            ul
+                li
+                    z-index: 1
+                    @for $i from 1 through 10
+                        &:nth-child(#{$i})
+                            transform: translateY(0)
+                            opacity: 1
+
+@keyframes openAnimation1
+    0%
+        transform: translateY(0) rotate(0)
+
+    25%
+        transform: translateY(200%) rotate(0)
+
+    30%
+        transform: translateY(200%) rotate(0)
+
+    40%
+        transform: translateY(200%) rotate(0)
+
+    50%
+        transform: translateY(200%) rotate(0)
+
+    60%
+        transform: translateY(200%) rotate(0)
+
+    100%
+        transform: translateY(200%) rotate(45deg)
+
+@keyframes openAnimation2
+    0%
+        opacity: 1
+
+    25%
+        opacity: 0
+
+    100%
+        opacity: 0
+
+@keyframes openAnimation3
+    0%
+        transform: translateY(0) rotate(0)
+
+    25%
+        transform: translate(-1px, -250%) rotate(0)
+
+    30%
+        transform: translate(-1px, -250%) rotate(0)
+
+    40%
+        transform: translate(-1px, -250%) rotate(0)
+
+    50%
+        transform: translate(-1px, -250%) rotate(0)
+
+    60%
+        transform: translate(-1px, -250%) rotate(0)
+
+    100%
+        transform: translate(-1px, -250%) rotate(-43deg)
+
+@keyframes closeAnimation1
+    0%
+        transform: translateY(200%) rotate(45deg)
+
+    25%
+        transform: translateY(200%) rotate(0)
+
+    30%
+        transform: translateY(200%) rotate(0)
+
+    40%
+        transform: translateY(200%) rotate(0)
+
+    50%
+        transform: translateY(200%) rotate(0)
+
+    60%
+        transform: translateY(200%) rotate(0)
+
+    100%
+        transform: translateY(0) rotate(0)
+
+@keyframes closeAnimation2
+    0%
+        opacity: 0
+
+    25%
+        opacity: 0
+
+    100%
+        opacity: 1
+
+@keyframes closeAnimation3
+    0%
+        transform: translate(-1px, -250%) rotate(-43deg)
+
+    25%
+        transform: translate(-1px, -250%) rotate(0)
+
+    30%
+        transform: translate(-1px, -250%) rotate(0)
+
+    40%
+        transform: translate(-1px, -250%) rotate(0)
+
+    50%
+        transform: translate(-1px, -250%) rotate(0)
+
+    60%
+        transform: translate(-1px, -250%) rotate(0)
+
+    100%
+        transform: translateY(0) rotate(0)                        

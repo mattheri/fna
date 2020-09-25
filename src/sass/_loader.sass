@@ -1,0 +1,24 @@
+// Last modified by Mathieu Theriault
+// On 25/09/2020
+// Defines default styles for Loader component
+    
+.loader
+    @include size(50px)
+    clip-path: circle(50% at 50% 50%)
+    background-image: linear-gradient(to bottom, #845ec2, #a086d4, #bdaee4, #ddd6f2, #ffffff)
+    animation: rotate 2s infinite linear
+    @include flexcenter
+    @include pos(absolute, 50%)
+
+    .inner-loader
+        @include size(30px)
+        clip-path: circle(50% at 50% 50%)
+        background-color: white
+
+@keyframes rotate
+    0%
+        transform: rotate()
+        
+    100%
+        transform: rotate(360deg)
+        

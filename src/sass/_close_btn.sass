@@ -1,0 +1,16 @@
+// Last modified by Mathieu Theriault
+// On 25/09/2020
+// Defines default styles for Close button
+    
+.close
+    @include flexcenter
+    @include size(2rem)
+    font-size: 3rem
+    cursor: pointer
+    border-radius: 5px
+    @include pos(absolute, 1rem)
+    transition: background-color 250ms
+    z-index: 1
+
+    &:hover
+        background-color: #00000036

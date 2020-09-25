@@ -1,0 +1,51 @@
+// Last modified by Mathieu Theriault
+// On 25/09/2020
+// Defines default styles for Debt component
+    
+.debt
+    position: relative
+    .button
+        z-index: 1
+
+    .side-panel
+        @include pos(fixed, 0)
+        @include size(100%)
+        display: flex
+        flex-direction: row-reverse
+        overflow: hidden
+        backdrop-filter: blur(5px)
+        -webkit-backdrop-filter: blur(5px)
+        background-color: #00000069
+        z-index: 10
+
+        .inner-panel
+            @include flexcenter(column)
+            width: 100%
+            min-height: 100%
+            background-color: white
+            position: relative
+            overflow: hidden
+
+            .fluid
+                overflow-y: scroll
+                overflow-x: hidden
+
+                .container
+                    background-color: white
+                    padding: 0
+                    margin: 0 auto
+                    flex-wrap: nowrap
+                    h3
+                        z-index: 1
+                .stat
+                    @include flexcenter(column)
+                    h2
+                        color: $greenMain
+                    h3
+                        width: fit-content
+
+@include mediaquery($lg)
+    .debt
+        .side-panel
+            .inner-panel
+                width: 50%

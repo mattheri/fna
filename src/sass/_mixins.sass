@@ -1,0 +1,46 @@
+// Last modified by Mathieu Theriault
+// On 25/09/2020
+// Defines mixins
+
+@mixin button()
+    background: $buttonGradient
+    border-radius: 25px
+    font-family: $font
+    color: white
+    border: none
+    padding: 0.5rem
+    cursor: pointer
+    margin-top: 0.3em
+    &:disabled
+        background: linear-gradient(to right, #7f8c8d, #8f989b, #a0a4a7, #b0b1b3, #bebebe)
+        color: black
+        cursor: default
+
+@mixin mediaquery($size)
+    @media (min-width: $size)
+        @content
+
+@mixin flexcenter($direction: row)
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: $direction
+
+@mixin flex($placement: space-evenly, $direction: row)
+    display: flex
+    justify-content: $placement
+    flex-direction: $direction
+
+@mixin size($width, $height: $width)
+    width: $width
+    height: $height
+
+@mixin pos($pos: absolute, $top: 0, $left: $top)
+    position: $pos
+    top: $top
+    left: $left
+
+@mixin posr($pos: absolute, $top: 0, $right: $top)
+    position: $pos
+    top: $top
+    right: $right

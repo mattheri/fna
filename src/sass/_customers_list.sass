@@ -1,0 +1,22 @@
+// Last modified by Mathieu Theriault
+// On 21/08/2020
+// Defines default styles for component CustomersList
+
+.customers-list
+    @include size(100%, 100vh)
+    padding: 3rem 0
+
+    .add-new-customer-btn
+        @include pos(fixed, 1rem)
+    form
+        padding: 0 2em
+        width: 100%
+        z-index: 1
+        margin-bottom: auto
+    h1
+        z-index: 1
+        text-align: center
+
+        span
+            text-decoration: underline
+            cursor: pointer

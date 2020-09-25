@@ -1,0 +1,35 @@
+// Last modified by Mathieu Theriault
+// On 21/08/2020
+// Defines default styles for Login and Register components
+    
+.login, .register
+    @include size(100%, 100vh)
+    @include flexcenter(column)
+    position: relative
+    overflow: hidden
+    &::before
+        content: ""
+        background-color: $greenMain
+        @include size(50vw, 10em)
+        @include pos
+        clip-path: polygon(0 0, 0 64%, 100% 0)
+        z-index: -1
+    &::after
+        content: ""
+        background-color: $greenMain
+        @include size(50vw, 10em)
+        position: absolute
+        bottom: 0
+        right: 0
+        clip-path: polygon(100% 100%, 0 100%, 100% 30%)
+        z-index: -1
+    form
+        width: 30%
+        min-width: 300px
+    h1 
+        font-family: $fontBold
+        font-size: 3rem
+        text-align: center
+        margin: 1em 0
+        span, a
+            color: $purpleMain
