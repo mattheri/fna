@@ -51,7 +51,6 @@ export const Debt = () => {
             numberOfPayments: parseInt(holder.numberOfPayments),
         };
 
-        console.log(bp)
         let debt: Mortgage | Personal;
         if (Object.values(bp).every(i => !!(i))) {
             switch (bp.debtType) {

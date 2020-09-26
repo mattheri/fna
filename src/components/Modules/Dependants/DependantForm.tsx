@@ -24,7 +24,6 @@ export const DependantForm: React.FC<Props> = ({ i, change, data }) => {
 
     const handleDOBtoAgeConversion = (dob: string) => {
         let values = dob.split(/[-/]/);
-        console.log(data.dob.split(/[-/]/).every((v, i) => v !== values[i]));
         const day = parseInt(values[0]);
         const month = parseInt(values[1]);
         const year = parseInt(values[2]);

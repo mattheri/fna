@@ -36,7 +36,6 @@ export const request = async (
             const res = await fetch(window.location.origin + path, options[method]);
             const json = await res.json();
             if (cb) cb(json);
-            console.log(json);
             if (!res.ok) throw new Error(JSON.parse(json).err);
             return json;
 
