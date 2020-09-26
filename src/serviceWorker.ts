@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
@@ -26,6 +28,7 @@ type Config = {
 };
 
 export function register(config?: Config) {
+  let isAppOnline = navigator.onLine;
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(
@@ -41,6 +44,18 @@ export function register(config?: Config) {
 
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+
+      window.addEventListener('online', () => {
+        if(!isAppOnline){
+          toast('🦄 The connectivity is back, sync in progress...');
+          isAppOnline = true;
+        }
+      });
+
+      window.addEventListener('offline', () => {
+        toast.warn('The app is running offline, no changes can be registered during this time.');
+        isAppOnline = false;
+      });
 
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.

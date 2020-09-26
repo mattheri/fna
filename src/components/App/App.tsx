@@ -15,7 +15,6 @@ function App() {
   
   return (
     <RecoilRoot>
-      <ReactQueryDevtools initialIsOpen />
       <ToastContainer
         hideProgressBar={true}
         position={"bottom-right"}
