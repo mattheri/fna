@@ -7,6 +7,10 @@
     @include flexcenter(column)
     position: relative
     overflow: hidden
+    .container
+        backdrop-filter: blur(5px)
+        -webkit-backdrop-filter: blur(5px)
+        @include flexcenter(column)
     &::before
         content: ""
         background-color: $greenMain

@@ -15,6 +15,7 @@ import { Loader } from '../Loader/Loader';
 import { Search } from './Search/Search';
 import { IFNA } from '../../../db/Fna';
 import { useQuery } from 'react-query';
+import { notify } from '../Toast/Toast';
 
 export const CustomerList = () => {
     const [customerList, setCustomerList] = React.useState<IFNA[]>();
@@ -82,6 +83,7 @@ export const CustomerList = () => {
                 setRetirement(res.retirement);
                 setFNA(res.FNA);
                 history.push(`${router.customers}/${res.fnaId}${router.basicInformation}`);
+                notify({ type: "success", msg: `New customer ${basicInformation.firstname} ${basicInformation.lastname} created successfully.` });
             }
 
             if (!res.ok) {

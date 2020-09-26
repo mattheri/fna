@@ -6,6 +6,7 @@ import { request } from '../../requests/requests';
 import { appContext } from '../Context/AppContext';
 import { useHistory } from 'react-router-dom';
 import { router } from '../../router';
+import { notify } from '../Toast/Toast';
 
 export const Register = () => {
 
@@ -46,6 +47,7 @@ export const Register = () => {
                 if (!res.err) {
                     setAppState(prev => (Object.assign({}, prev, { user: res, isAuthenticated: true })));
                     history.push(router.customers);
+                    notify({type: "success", msg: "User created successfully!"});
                 }
 
                 if (!res.ok) {

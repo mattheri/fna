@@ -1,5 +1,6 @@
 import React from 'react';
-import { useLocation, Link, useRouteMatch } from 'react-router-dom';
+import { useLocation, Link, useRouteMatch, useHistory } from 'react-router-dom';
+import { IFNA } from '../../../db/Fna';
 import { router } from '../../router';
 import { ModulesNavigationLink } from './ModulesNavigationLink';
 
@@ -8,9 +9,10 @@ export const ModulesNavigation = () => {
 
     const location = useLocation();
     const { url } = useRouteMatch();
-    const [links, setLinks] = React.useState<Links[]>([])
+    const [links, setLinks] = React.useState<Links[]>([]);
 
     React.useEffect(() => {
+
         const totalLinks: Links[] = [
             {
                 text: "Information",

@@ -7,6 +7,7 @@ import { router } from '../../router';
 import { request } from '../../requests/requests';
 import { appContext } from '../Context/AppContext';
 import { LoginBackground } from './LoginBackground';
+import { Container } from '../Container/Container';
 
 export const Login = () => {
 
@@ -51,13 +52,15 @@ export const Login = () => {
     return (
         <section className="login">
             <LoginBackground />
-            <h1 className="login-hello">Hello<span>.</span></h1>
-            <Form stateToUpdate={[credentials, setCredentials]}>
-                <Input label="Username" type="email" id="login-username" value={credentials.username} autoComplete="username" />
-                <Input label="Password" type="password" id="login-password" autoComplete="current-password" value={credentials.password} />
-            </Form>
-            <Button onClick={handleLogin} text="Login" isDisabled={isDisabled} />
-            <h1><span><Link to={{pathname: router.register, state: {background: location}}}>Register</Link></span> to create an account<span>.</span></h1>
+            <Container>
+                <h1 className="login-hello">Hello<span>.</span></h1>
+                <Form stateToUpdate={[credentials, setCredentials]}>
+                    <Input label="Username" type="email" id="login-username" value={credentials.username} autoComplete="username" />
+                    <Input label="Password" type="password" id="login-password" autoComplete="current-password" value={credentials.password} />
+                </Form>
+                <Button onClick={handleLogin} text="Login" isDisabled={isDisabled} />
+                <h1><span><Link to={{pathname: router.register, state: {background: location}}}>Register</Link></span> to create an account<span>.</span></h1>
+            </Container>
         </section>
     );
 }

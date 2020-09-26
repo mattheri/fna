@@ -16,6 +16,7 @@ import save from '@iconify/icons-fa-solid/save';
 import { Icon } from "@iconify/react";
 import { Button } from '../Button/Button';
 import { useQuery } from 'react-query';
+import { notify } from '../Toast/Toast';
 
 export const FNA = () => {
     const { id } = useParams();
@@ -37,14 +38,16 @@ export const FNA = () => {
         refetchOnMount: false
     });
 
-    const handleUpdateFnaInDb = () => {
-        return request(`/api/updateCustomer?id=${id}`, "PUT", {
+    const handleUpdateFnaInDb = async () => {
+        const res = await request(`/api/updateCustomer?id=${id}`, "PUT", {
             user: user,
             debt: debt,
             children: children,
             income: income,
             retirement: retirement
         });
+
+        if (res) notify({ type: "success", msg: `${user.firstname} ${user.lastname} has been updated with the new information!` }); 
     };
 
     React.useEffect(() => {
@@ -62,7 +65,8 @@ export const FNA = () => {
         setTimeout(() => {
             setIsDisabled(false);
         }, 5000);
-    }, [isDisabled])
+    }, [isDisabled]);
+
     return (
         <Container fluid>
             <Button classname="fna-save" disabled={isDisabled} onClick={() => {

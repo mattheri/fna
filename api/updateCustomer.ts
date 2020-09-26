@@ -16,7 +16,7 @@ export default (req: NowRequest, res: NowResponse) => {
                 retirement: retirement
             }
         }, { useFindAndModify: false, lean: true, new: true }).then((v) => {
-            console.log(v);
+            res.send(JSON.stringify(v));
             if (v) {
                 mongoose.disconnect();
             }
