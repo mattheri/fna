@@ -25,8 +25,9 @@ export const CustomerList = () => {
         dob: "",
         age: "",
         lifeExpectancy: "82",
-        previousDOB: "" 
-    })
+        previousDOB: "",
+        image: ""
+    });
     const { url } = useRouteMatch();
     const history = useHistory();
     const [appState, setAppState] = React.useContext(appContext);

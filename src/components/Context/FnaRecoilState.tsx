@@ -13,7 +13,8 @@ export const userState = atom({
         street: "",
         city: "",
         country: "",
-        postalCode: ""
+        postalCode: "",
+        image: ""
     }
 });
 

@@ -33,6 +33,7 @@
 
             ul
                 list-style: none
+                animation: closeUL 0s linear 2.5s forwards
                 li
                     @include size(10rem, 2rem)
                     border-radius: 25px
@@ -60,6 +61,7 @@
     .context-nav-container
         .context-nav
             ul
+                animation: openUL 0s linear forwards
                 li
                     z-index: 1
                     @for $i from 1 through 10
@@ -173,4 +175,14 @@
         transform: translate(-1px, -250%) rotate(0)
 
     100%
-        transform: translateY(0) rotate(0)                        
+        transform: translateY(0) rotate(0)
+@keyframes openUL
+    0%
+        transform: translateX(100%)
+    100%
+        transform: translateY(0)
+@keyframes closeUL
+    0%
+        transform: translateY(0)
+    100%
+        transform: translateX(100%)                       

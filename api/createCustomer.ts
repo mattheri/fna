@@ -31,7 +31,8 @@ export default (req: NowRequest, res: NowResponse) => {
                 street: "",
                 city: "",
                 country: "",
-                postalCode: ""
+                postalCode: "",
+                image: ""
             },
             children: {
                 children: [

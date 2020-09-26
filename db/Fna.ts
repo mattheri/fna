@@ -22,7 +22,8 @@ export interface IFNA extends Document {
         street: string,
         city: string,
         country: string,
-        postalCode: string
+        postalCode: string,
+        image: string
     };
     children: {
         children: {
@@ -98,7 +99,8 @@ const fnaSchema: Schema = new mongoose.Schema({
         street: String,
         city: String,
         country: String,
-        postalCode: String
+        postalCode: String,
+        image: String
     },
     children: {
         children: [{

@@ -1,4 +1,5 @@
 import React from 'react';
+import { request } from '../../../requests/requests';
 import { Form } from '../../Form/Form';
 import { Input } from '../../Input/Input';
 
@@ -10,13 +11,33 @@ type Props = {
         dob: string;
         age: string;
         lifeExpectancy: string;
+        image: string;
     }
 }
 
 export const IdentityForm = ({ state, values }: Props) => {
     const [information, setInformation] = state;
+    const [image, setImage] = React.useState(false);
+
+    React.useEffect(() => {
+        if (values.image) {
+            (async () => {
+                const res = await fetch("https://cors-anywhere.herokuapp.com/" + values.image);
+                if (res.ok) {
+                    setImage(true);
+                }
+            })();
+        }
+    }, [values.image]);
+
     return (
         <Form stateToUpdate={[information, setInformation]}>
+            {!image ?
+                <Input id="basicInformation-image" label="Add an image" value={values.image} /> :
+                <div className="image">
+                    <img onClick={() => setImage(false)} src={values.image} />
+                </div>
+            }
             <Input id="basicInformation-firstname" multi label="Firstname" value={values.firstname} />
             <Input id="basicInformation-lastname" multi label="Lastname" value={values.lastname} />
             <Input id="basicInformation-dob" calendar multi label="Date of Birth" value={values.dob} />

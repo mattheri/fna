@@ -278,7 +278,7 @@
 }
 
 .input.calendar-input {
-  z-index: 10;
+  z-index: 9;
 }
 
 .input.calendar-input input {
@@ -509,6 +509,21 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.form .image {
+  z-index: 10;
+}
+
+.form .image img {
+  width: 80px;
+  border: 3px black solid;
+  border-radius: 50%;
+  padding: .3em;
+  background-color: white;
+  margin-bottom: 1rem;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 .loader {
@@ -840,6 +855,8 @@
 
 .context-nav-button .context-nav-container .context-nav ul {
   list-style: none;
+  -webkit-animation: closeUL 0s linear 2.5s forwards;
+          animation: closeUL 0s linear 2.5s forwards;
 }
 
 .context-nav-button .context-nav-container .context-nav ul li {
@@ -966,6 +983,11 @@
 .show .context-nav-button-container div:nth-child(3) {
   -webkit-animation: openAnimation3 500ms forwards;
           animation: openAnimation3 500ms forwards;
+}
+
+.show .context-nav-container .context-nav ul {
+  -webkit-animation: openUL 0s linear forwards;
+          animation: openUL 0s linear forwards;
 }
 
 .show .context-nav-container .context-nav ul li {
@@ -1325,6 +1347,50 @@
   100% {
     -webkit-transform: translateY(0) rotate(0);
             transform: translateY(0) rotate(0);
+  }
+}
+
+@-webkit-keyframes openUL {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes openUL {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes closeUL {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes closeUL {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
 }
 
