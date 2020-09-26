@@ -6,6 +6,7 @@ import { Button } from '../Button/Button';
 import { router } from '../../router';
 import { request } from '../../requests/requests';
 import { appContext } from '../Context/AppContext';
+import { LoginBackground } from './LoginBackground';
 
 export const Login = () => {
 
@@ -49,6 +50,7 @@ export const Login = () => {
     
     return (
         <section className="login">
+            <LoginBackground />
             <h1 className="login-hello">Hello<span>.</span></h1>
             <Form stateToUpdate={[credentials, setCredentials]}>
                 <Input label="Username" type="email" id="login-username" value={credentials.username} autoComplete="username" />

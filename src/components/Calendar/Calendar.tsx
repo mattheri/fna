@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from "moment";
-import { CalendarTable } from './CalendarTable';
 import { CalendarDay } from './CalendarDay';
+import { motion, AnimatePresence } from "framer-motion";
 
 type Props = {onClick: (v: string) => void }
 export const Calendar = ({ onClick }: Props) => {
@@ -11,7 +11,7 @@ export const Calendar = ({ onClick }: Props) => {
     const [date, setDate] = React.useState({
         d: m()
     });
-    const [dir, setDir] = React.useState({d: false, c: false});
+    const [dir, setDir] = React.useState<string>();
     const [showMonths, setShowMonths] = React.useState(false);
     const [showYears, setShowYears] = React.useState(false);
 
@@ -58,17 +58,42 @@ export const Calendar = ({ onClick }: Props) => {
             if (i === combined.length - 1) rows.push(cells);
         });
 
-        return rows.map((d, i) => <tr key={i + 100}>{d}</tr>)
+        const variants = {
+            enter: (direction: string) => {
+                return {
+                    x: direction === "right" ? -210 : 210
+                }
+            },
+            center: {
+                x: 0
+            },
+            exit: (direction: string) => {
+                return {
+                    x: direction === "right" ? 210 : -210
+                }
+            }
+        }
+
+
+        return rows.map((d, i) => {
+            return <motion.tr
+                    custom={dir}
+                    variants={variants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    key={(date.d.month() * date.d.year()) + i}>{d}</motion.tr>
+        })
     }
     
     const handleChangeMonth = (ev: React.MouseEvent<HTMLDivElement>) => {
         const addMonth = ev.currentTarget.classList.contains("next");
         if (addMonth) {
             setDate(previous => (Object.assign({}, previous, { d: m(date.d).add(1, "M") })));
-            setDir({d: false, c: !dir.c});
+            setDir("left");
         } else {
             setDate(previous => (Object.assign({}, previous, { d: m(date.d).subtract(1, "M") })));
-            setDir({d: true, c: !dir.c});
+            setDir("right");
         }
     }
 
@@ -80,7 +105,7 @@ export const Calendar = ({ onClick }: Props) => {
     const getYears = () => {
         const years = [];
 
-        for (let i = date.d.year(); i > date.d.year() - 100; i--) {
+        for (let i = 2020; i > 2020 - 100; i--) {
             years.push(i);
         };
 
@@ -121,9 +146,11 @@ export const Calendar = ({ onClick }: Props) => {
                         {moment.weekdaysShort().map(day => <th key={day} className="day">{day}</th>)}
                     </tr>
                 </thead>
-                <CalendarTable right={dir.d} change={dir.c}>
-                    {calendarDays()}
-                </CalendarTable>
+                <AnimatePresence custom={dir}>
+                    <tbody>
+                        {calendarDays()}
+                    </tbody>
+                </AnimatePresence>
             </table>
         </div>
     );

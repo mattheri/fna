@@ -83,7 +83,7 @@
   font-family: "Oswald", sans-serif;
   font-size: 3rem;
   text-align: center;
-  margin: 1em 0;
+  margin: 0.3em 0;
 }
 
 .login h1 span, .login h1 a, .register h1 span, .register h1 a {

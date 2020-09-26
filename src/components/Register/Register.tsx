@@ -10,8 +10,6 @@ import { router } from '../../router';
 export const Register = () => {
 
     const [registerInfo, setRegisterInfo] = React.useState({
-        firstname: "",
-        lastname: "",
         emailAddress: "",
         password: "",
         reType: ""
@@ -33,8 +31,6 @@ export const Register = () => {
         }
 
         if (
-            registerInfo.firstname.length > 3 &&
-            registerInfo.lastname.length > 3 &&
             (registerInfo.emailAddress.length > 5 && registerInfo.emailAddress.includes("@")) &&
             passwordMatch
         ) {
@@ -62,10 +58,8 @@ export const Register = () => {
         <section className="register">
             <h1>Hello there<span>.</span></h1>
             <Form stateToUpdate={[registerInfo, setRegisterInfo]}>
-                <Input id="register-firstname" type="text" label="Firstname" value={registerInfo.firstname} />
-                <Input id="register-lastname" type="text" label="Lastname" value={registerInfo.lastname} />
                 <Input id="register-emailAddress" type="email" label="Email" value={registerInfo.emailAddress} autoComplete="username" />
-                <Input id="register-password" type="password" label="Set a password" value={registerInfo.password} autoComplete="new-password" muted="Passwords should contain at least 1 number and minimum 8 characters" />
+                <Input id="register-password" type="password" label="Set a password" value={registerInfo.password} autoComplete="new-password" />
                 <Input id="register-reType" type="password" label="Type it again" value={registerInfo.reType} />
             </Form>
             <Button onClick={handleRegister} text="Register" isDisabled={isDisabled} />
