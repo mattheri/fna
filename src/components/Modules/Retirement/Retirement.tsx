@@ -25,20 +25,20 @@ export const Retirement = () => {
     
     return (
         <Container fluid classname="module">
-            <Container fluid classname="container" data-content="Retirement">
+            <Container fluid classname="container" data-content="Retraite">
                 <Form stateToUpdate={[retirementValues, setRetirementValues]}>
-                    <Input id="retirement-goal" label="Retirement Goal" multi value={currRetirement.goal > 0 ? currRetirement.goal.toString() : "" || retirementValues.goal} />
-                    <Input id="retirement-age" label="Start retirement at..." multi value={currRetirement.retirementAge.toString() !== "NaN" ? currRetirement.retirementAge.toString() || retirementValues.age : retirementValues.age} />
+                    <Input id="retirement-goal" label="But à la retrate" multi value={currRetirement.goal > 0 ? currRetirement.goal.toString() : "" || retirementValues.goal} />
+                    <Input id="retirement-age" label="Commencer la retraite à..." multi value={currRetirement.retirementAge.toString() !== "NaN" ? currRetirement.retirementAge.toString() || retirementValues.age : retirementValues.age} />
                 </Form>
             </Container>
             <List>
                 <div className="list-bar">
                     <span>Age</span>
-                    <span>Gross</span>
-                    <span>Federal Taxes</span>
-                    <span>Provincial Taxes</span>
+                    <span>Brut</span>
+                    <span>Taxes Fédérales</span>
+                    <span>Taxes Provinciales</span>
                     <span>Net</span>
-                    <span>Difference</span>
+                    <span>Différence</span>
                 </div>
                 {currRetirement.income.map((d: any, i: number) => <ListItem>
                     <span>{currRetirement.retirementAge + i}</span>
