@@ -61,19 +61,19 @@ export const DebtForm = ({ i, change, sidePanelState, data }: Props) => {
                 classname="container"
                 data-content={data.name ? data.name : debt.name}>
                 <Form stateToUpdate={[debt, setDebt]}>
-                    <Input id={`debts${i}-name`} label="Debt Name" value={data.name ? data.name : debt.name} multi />
-                    <Input id={`debts${i}-principal`} label="Amount" value={data.principal ? (data.principal).toString() : debt.principal} multi />
-                    <Input id={`debts${i}-rate`} label="Rate" value={data.rate ? (data.rate).toString() : debt.rate} multi />
-                    <Input id={`debts${i}-payment`} label="Payment" value={data.payment ? (data.payment).toString() : debt.payment} multi />
-                    <Input id={`debts${i}-numberOfPayments`} label="Number of payments" value={data.numberOfPayments ? (data.numberOfPayments).toString() : debt.numberOfPayments} multi />
+                    <Input id={`debts${i}-name`} label="Nom" value={data.name ? data.name : debt.name} multi />
+                    <Input id={`debts${i}-principal`} label="Montant" value={data.principal ? (data.principal).toString() : debt.principal} multi />
+                    <Input id={`debts${i}-rate`} label="Taux" value={data.rate ? (data.rate).toString() : debt.rate} multi />
+                    <Input id={`debts${i}-payment`} label="Paiement" value={data.payment ? (data.payment).toString() : debt.payment} multi />
+                    <Input id={`debts${i}-numberOfPayments`} label="Nombre de paiements" value={data.numberOfPayments ? (data.numberOfPayments).toString() : debt.numberOfPayments} multi />
                     <div className="input">
                         <select onChange={handleDropDown} value={debt.debtType}>
-                            <option value="mortgage">Mortgage</option>
-                            <option value="personal">Personal</option>
+                            <option value="mortgage">Hypothèque</option>
+                            <option value="personal">Personnel</option>
                         </select>
                     </div>
                 </Form>
-                <Button classname="my-1" onClick={() => sidePanelState(prev => (Object.assign({}, prev, {show: true, index: i})))} text="More information" />
+                <Button classname="my-1" onClick={() => sidePanelState(prev => (Object.assign({}, prev, {show: true, index: i})))} text="Plus d'informations" />
             </Container>
         </FadeIn>
     );

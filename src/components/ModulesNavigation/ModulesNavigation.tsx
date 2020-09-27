@@ -15,23 +15,23 @@ export const ModulesNavigation = () => {
 
         const totalLinks: Links[] = [
             {
-                text: "Information",
+                text: "Informations",
                 to: `${url}${router.basicInformation}`
             },
             {
-                text: "Dependants",
+                text: "Enfants",
                 to: `${url}${router.dependants}`
             },
             {
-                text: "Income",
+                text: "Revenus",
                 to: `${url}${router.income}`
             },
             {
-                text: "Debt",
+                text: "Dettes",
                 to: `${url}${router.debt}`
             },
             {
-                text: "Retirement",
+                text: "Retraite",
                 to: `${url}${router.retirement}`
             },
         ];

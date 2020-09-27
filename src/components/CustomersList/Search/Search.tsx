@@ -17,7 +17,7 @@ export const Search = ({customers, setCustomers}: Props) => {
     return (
         <Container>
             <Form onChange={() => handleSearch(search.search)} stateToUpdate={[search, setSearch]}>
-                <Input autoComplete="off" id="customers-search" label="Search" value={search.search} />
+                <Input autoComplete="off" id="customers-search" label="Recherche" value={search.search} />
             </Form>
         </Container>
     );

@@ -3,159 +3,159 @@ import { router } from "../../router";
 export const locations = {
     [router.home]: [
         {
-            text: "Login",
+            text: "Connexion",
             path: router.login
         },
         {
-            text: "Register",
+            text: "Nouvel utilisateur",
             path: router.register
         }
     ],
     [router.login]: [
         {
-            text: "Register",
+            text: "Nouvel utilisateur",
             path: router.register
         }
     ],
     [router.register]: [
         {
-            text: "Login",
+            text: "Connexion",
             path: router.login
         }
     ],
     [router.customers]: [
         {
-            text: "Log Out",
+            text: "Déconnexion",
             path: router.login,
         }
     ],
     [router.basicInformation]: [
         {
-            text: "Customer List",
+            text: "Liste de clients",
             path: router.customers
         },
         {
-            text: "Log Out",
+            text: "Déconnexion",
             path: router.login
         },
         {
-            text: "Childrens",
+            text: "Enfants",
             path: router.dependants
         },
         {
-            text: "Income",
+            text: "Revenus",
             path: router.income
         },
         {
-            text: "Debt",
+            text: "Dettes",
             path: router.debt
         },
         {
-            text: "Retirement",
+            text: "Retraite",
             path: router.retirement
         }
     ],
     [router.dependants]: [
         {
-            text: "Customer List",
+            text: "Liste de clients",
             path: router.customers
         },
         {
-            text: "Log Out",
+            text: "Déconnexion",
             path: router.login
         },
         {
-            text: "Basic Informations",
+            text: "Informations de base",
             path: router.basicInformation
         },
         {
-            text: "Income",
+            text: "Revenus",
             path: router.income
         },
         {
-            text: "Debt",
+            text: "Dettes",
             path: router.debt
         },
         {
-            text: "Retirement",
+            text: "Retraite",
             path: router.retirement
         }
     ],
     [router.income]: [
         {
-            text: "Customer List",
+            text: "Liste de clients",
             path: router.customers
         },
         {
-            text: "Log Out",
+            text: "Déconnexion",
             path: router.login
         },
         {
-            text: "Basic Informations",
+            text: "Informations de base",
             path: router.basicInformation
         },
         {
-            text: "Childrens",
+            text: "Enfants",
             path: router.dependants
         },
         {
-            text: "Debt",
+            text: "Dettes",
             path: router.debt
         },
         {
-            text: "Retirement",
+            text: "Retraite",
             path: router.retirement
         }
     ],
     [router.debt]: [
         {
-            text: "Customer List",
+            text: "Liste de clients",
             path: router.customers
         },
         {
-            text: "Log Out",
+            text: "Déconnexion",
             path: router.login
         },
         {
-            text: "Basic Informations",
+            text: "Informations de base",
             path: router.basicInformation
         },
         {
-            text: "Childrens",
+            text: "Enfants",
             path: router.dependants
         },
         {
-            text: "Income",
+            text: "Revenus",
             path: router.income
         },
         {
-            text: "Retirement",
+            text: "Retraite",
             path: router.retirement
         }
     ],
     [router.retirement]: [
         {
-            text: "Customer List",
+            text: "Liste de clients",
             path: router.customers
         },
         {
-            text: "Log Out",
+            text: "Déconnexion",
             path: router.login
         },
         {
-            text: "Basic Informations",
+            text: "Informations de base",
             path: router.basicInformation
         },
         {
-            text: "Childrens",
+            text: "Enfants",
             path: router.dependants
         },
         {
-            text: "Income",
+            text: "Revenus",
             path: router.income
         },
         {
-            text: "Debt",
+            text: "Dettes",
             path: router.debt
         }
     ]

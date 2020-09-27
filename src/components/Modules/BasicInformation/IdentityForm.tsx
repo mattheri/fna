@@ -33,16 +33,16 @@ export const IdentityForm = ({ state, values }: Props) => {
     return (
         <Form stateToUpdate={[information, setInformation]}>
             {!image ?
-                <Input id="basicInformation-image" label="Add an image" value={values.image} /> :
+                <Input id="basicInformation-image" label="Ajouter une image" value={values.image} /> :
                 <div className="image">
                     <img onClick={() => setImage(false)} src={values.image} />
                 </div>
             }
-            <Input id="basicInformation-firstname" multi label="Firstname" value={values.firstname} />
-            <Input id="basicInformation-lastname" multi label="Lastname" value={values.lastname} />
-            <Input id="basicInformation-dob" calendar multi label="Date of Birth" value={values.dob} />
+            <Input id="basicInformation-firstname" multi label="Prénom" value={values.firstname} />
+            <Input id="basicInformation-lastname" multi label="Nom de famille" value={values.lastname} />
+            <Input id="basicInformation-dob" calendar multi label="Date de naissance" value={values.dob} />
             <Input id="basicInformation-age" multi disabled label="Age" value={values.age} muted="Will fill itself once the date of birth is entered" />
-            <Input id="basicInformation-lifeExpectancy" multi label="Life expectancy" value={values.lifeExpectancy} muted={<><span>This value is set by default </span><a href="https://en.wikipedia.org/wiki/Canada#Health" target="_blank">Source</a></>} />
+            <Input id="basicInformation-lifeExpectancy" multi label="Âge maximal" value={values.lifeExpectancy} muted={<><span>This value is set by default </span><a href="https://en.wikipedia.org/wiki/Canada#Health" target="_blank">Source</a></>} />
         </Form>
     );
 };

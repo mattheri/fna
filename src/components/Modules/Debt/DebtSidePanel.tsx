@@ -137,9 +137,9 @@ export const DebtSidePanel = ({ data, state }: Props) => {
                                     }}
                                 />
                                 <Container classname="stats-container">
-                                    <Stats i={0} tax={data.totalInterestPaid} title="Interests paid" />
+                                    <Stats i={0} tax={data.totalInterestPaid} title="Intérests payés" />
                                     <Stats i={0} tax={data.totalInterestPaid + data.principal} title="Total" />
-                                    <Stats i={0} tax={(data.principalOverTime.length / 12)} title="Time to pay" unit=" years" />
+                                    <Stats i={0} tax={(data.principalOverTime.length / 12)} title="Temps pour payer" unit=" années" />
                                 </Container>
                             </Container>
                         </Container>

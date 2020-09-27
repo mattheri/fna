@@ -50,10 +50,10 @@ export const DependantForm: React.FC<Props> = ({ i, change, data }) => {
         <FadeIn trigger={!!(i + 1)}>
             <Container fluid classname="container" data-content={dependant.name}>
                 <Form stateToUpdate={[dependant, setDependant]}>
-                    <Input id={`dependants${i}-name`} label="Firstname" value={dependant.name} multi />
-                    <Input id={`dependants${i}-lastname`} label="Lastname" value={dependant.lastname} multi />
-                    <Input id={`dependants${i}-dob`} label="Date of Birth" calendar value={dependant.dob} multi />
-                    <Input id={`dependants${i}-age`} label="Age" value={dependant.age} multi disabled />
+                    <Input id={`dependants${i}-name`} label="Prénom" value={dependant.name} multi />
+                    <Input id={`dependants${i}-lastname`} label="Nom de famille" value={dependant.lastname} multi />
+                    <Input id={`dependants${i}-dob`} label="Date de naissance" calendar value={dependant.dob} multi />
+                    <Input id={`dependants${i}-age`} label="Âge" value={dependant.age} multi disabled />
                 </Form>
             </Container>
         </FadeIn>

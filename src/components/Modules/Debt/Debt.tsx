@@ -70,7 +70,7 @@ export const Debt = () => {
     return (
         <Container fluid classname="debt module">
             {debt.debt.map((d, i) => <DebtForm change={setHolder} sidePanelState={setShowPanel} data={d} i={i} key={i} />)}
-            <Button classname="btn" onClick={handleAddDependant} text="Add debt" />
+            <Button classname="btn" onClick={handleAddDependant} text="Ajouter une dette" />
             {showPanel.show && <DebtSidePanel data={debt.debt.filter((d, i) => showPanel.index === i)[0]} state={[showPanel, setShowPanel]} />}
         </Container>
     );

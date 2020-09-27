@@ -60,11 +60,11 @@ export const Register = () => {
         <section className="register">
             <h1>Hello there<span>.</span></h1>
             <Form stateToUpdate={[registerInfo, setRegisterInfo]}>
-                <Input id="register-emailAddress" type="email" label="Email" value={registerInfo.emailAddress} autoComplete="username" />
-                <Input id="register-password" type="password" label="Set a password" value={registerInfo.password} autoComplete="new-password" />
-                <Input id="register-reType" type="password" label="Type it again" value={registerInfo.reType} />
+                <Input id="register-emailAddress" type="email" label="Courriel" value={registerInfo.emailAddress} autoComplete="username" />
+                <Input id="register-password" type="password" label="Entrez un mot de passe" value={registerInfo.password} autoComplete="new-password" />
+                <Input id="register-reType" type="password" label="Entrez le de nouveau" value={registerInfo.reType} />
             </Form>
-            <Button onClick={handleRegister} text="Register" isDisabled={isDisabled} />
+            <Button onClick={handleRegister} text="Créer" isDisabled={isDisabled} />
             <h1><span>Nice</span> to meet you.</h1>
         </section>
     );

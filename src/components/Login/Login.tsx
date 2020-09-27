@@ -55,11 +55,11 @@ export const Login = () => {
             <Container>
                 <h1 className="login-hello">Hello<span>.</span></h1>
                 <Form stateToUpdate={[credentials, setCredentials]}>
-                    <Input label="Username" type="email" id="login-username" value={credentials.username} autoComplete="username" />
-                    <Input label="Password" type="password" id="login-password" autoComplete="current-password" value={credentials.password} />
+                    <Input label="Courriel" type="email" id="login-username" value={credentials.username} autoComplete="username" />
+                    <Input label="Mot de passe" type="password" id="login-password" autoComplete="current-password" value={credentials.password} />
                 </Form>
-                <Button onClick={handleLogin} text="Login" isDisabled={isDisabled} />
-                <h1><span><Link to={{pathname: router.register, state: {background: location}}}>Register</Link></span> to create an account<span>.</span></h1>
+                <Button onClick={handleLogin} text="Connexion" isDisabled={isDisabled} />
+                <h1><span><Link to={{pathname: router.register, state: {background: location}}}>Créer</Link></span> un nouveau compte<span>.</span></h1>
             </Container>
         </section>
     );

@@ -49,18 +49,18 @@ export const Income = () => {
     }, [income]);
 
     const titles = [
-        "Gross",
+        "Brut",
         "Net",
-        "Provincial Tax",
-        "Federal Tax",
-        "EI",
-        "QPP",
-        "QPIP"
+        "Taxes prvinciales",
+        "Taxes fédérales",
+        "AE",
+        "RRQ",
+        "RQAP"
     ];
 
     return (
         <Container fluid className="module income">
-            <Container fluid classname="container" data-content="Income">
+            <Container fluid classname="container" data-content="Revenus">
                 <Form stateToUpdate={[income, setIncome]}>
                     <Input
                         style={{ width: `${(incomeFnaState.gross).toString().length > 2 || income.amount.length > 2 ? (incomeFnaState.gross).toString().length * 26 || income.amount.length * 26 : 54}px` }}

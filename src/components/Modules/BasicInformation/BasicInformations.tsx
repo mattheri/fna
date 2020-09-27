@@ -27,15 +27,15 @@ export const BasicInformation = () => {
     
     return (
         <Container fluid as="section" classname="basic-information module">
-            <Container fluid classname="container basic-information-container" as="section" data-content="Basic Information">
+            <Container fluid classname="container basic-information-container" as="section" data-content="Informations de base">
                 <IdentityForm state={[information, setInformation]} values={customer} />
             </Container>
-            <Container fluid classname="container address-container" as="section" data-content="Address">
+            <Container fluid classname="container address-container" as="section" data-content="Adresse">
                 <Form stateToUpdate={[information, setInformation]}>
-                    <Input id="basicInformation-street" label="Street" value={customer.street} />
-                    <Input id="basicInformation-city" label="City" value={customer.city} />
-                    <Input id="basicInformation-country" multi label="Country" value={customer.country} />
-                    <Input id="basicInformation-postalCode" multi label="Postal Code" value={customer.postalCode} />
+                    <Input id="basicInformation-street" label="Rue" value={customer.street} />
+                    <Input id="basicInformation-city" label="Ville" value={customer.city} />
+                    <Input id="basicInformation-country" multi label="Pays" value={customer.country} />
+                    <Input id="basicInformation-postalCode" multi label="Code postal" value={customer.postalCode} />
                 </Form>
             </Container>
         </Container>    

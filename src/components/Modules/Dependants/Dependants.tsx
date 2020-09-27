@@ -46,7 +46,7 @@ export const Dependants = () => {
                 change={setHolder}
                 i={i}
                 data={d} />)}
-            <Button classname="btn" onClick={handleAddDependant} text="Add children" />
+            <Button classname="btn" onClick={handleAddDependant} text="Ajouter un enfant" />
         </Container>
     );
 }

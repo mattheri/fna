@@ -28,8 +28,6 @@ export const IncomeStats = ({ stats }: Props) => {
     
     React.useEffect(() => {
         setStatArray(stats);
-        console.log(stats);
-        console.log(statArray);
     }, [stats, statArray]);
     
     return (
