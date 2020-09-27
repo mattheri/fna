@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-const CACHE_NAME = "v1";
+const CACHE_NAME = "v2";
 
 // This optional code is used to register a service worker.
 // register() is not called by default.
