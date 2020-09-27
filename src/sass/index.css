@@ -61,6 +61,34 @@
 
 @media (min-width: 768px) {
   .login-background {
+    width: 100vh;
+    height: 50vw;
+    position: absolute;
+    top: 35%;
+    left: -1em;
+  }
+  .login-background .container .grid-item {
+    width: 300px;
+    height: 300px;
+    padding: 0.3em;
+    border-radius: 15px;
+  }
+  .login-background .container .grid-item-width-2 {
+    width: 45%;
+  }
+  .login-background .container .grid-item-width-3 {
+    width: 63%;
+  }
+  .login-background .container .grid-item-height-2 {
+    height: 45%;
+  }
+  .login-background .container .grid-item-height-3 {
+    height: 60%;
+  }
+}
+
+@media (min-width: 992px) {
+  .login-background {
     position: absolute;
     top: 0;
     left: 50%;
@@ -82,24 +110,6 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-  }
-  .login-background .container .grid-item {
-    width: 300px;
-    height: 300px;
-    padding: 0.3em;
-    border-radius: 15px;
-  }
-  .login-background .container .grid-item-width-2 {
-    width: 45%;
-  }
-  .login-background .container .grid-item-width-3 {
-    width: 63%;
-  }
-  .login-background .container .grid-item-height-2 {
-    height: 45%;
-  }
-  .login-background .container .grid-item-height-3 {
-    height: 60%;
   }
 }
 

@@ -21,14 +21,10 @@
                 height: 45%
             &-height-3
                 height: 60%
-
 @include mediaquery($md)
     .login-background
-        @include pos(absolute, 0, 50%)
-        transform: translateX(-50%)
-        z-index: -1
         @include size(100vh, 50vw)
-        @include flexcenter
+        @include pos(absolute, 35%, -1em)
         .container
             .grid-item
                 width: 300px
@@ -43,4 +39,11 @@
                     height: 45%
                 &-height-3
                     height: 60%
+@include mediaquery($lg)
+    .login-background
+        @include pos(absolute, 0, 50%)
+        transform: translateX(-50%)
+        z-index: -1
+        @include size(100vh, 50vw)
+        @include flexcenter
                 

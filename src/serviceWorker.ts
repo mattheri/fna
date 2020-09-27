@@ -1,5 +1,7 @@
 import { toast } from "react-toastify";
 
+const CACHE_NAME = "v1";
+
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
@@ -70,6 +72,7 @@ export function register(config?: Config) {
           );
         });
       } else {
+        
         // Is not localhost. Just register service worker
         registerValidSW(swUrl, config);
       }
@@ -81,7 +84,10 @@ function registerValidSW(swUrl: string, config?: Config) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
+      
       registration.onupdatefound = () => {
+        registration.update();
+        console.log(CACHE_NAME);
         const installingWorker = registration.installing;
         if (installingWorker == null) {
           return;
