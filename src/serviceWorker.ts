@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-const CACHE_NAME = "v3";
+const CACHE_NAME = "v5";
 
 // This optional code is used to register a service worker.
 // register() is not called by default.
@@ -49,13 +49,13 @@ export function register(config?: Config) {
 
       window.addEventListener('online', () => {
         if(!isAppOnline){
-          toast('🦄 The connectivity is back, sync in progress...');
+          toast("🦄 L'application est en ligne. Vous pouvez effectuer des changements.");
           isAppOnline = true;
         }
       });
 
       window.addEventListener('offline', () => {
-        toast.warn('The app is running offline, no changes can be registered during this time.');
+        toast.warn("L'application est maintenant hors-ligne. Les changements ne seront pas sauvegardés.");
         isAppOnline = false;
       });
 
@@ -100,7 +100,6 @@ function registerValidSW(swUrl: string, config?: Config) {
               // At this point, the updated precached content has been fetched,
               // but the previous service worker will still serve the older
               // content until all client tabs are closed.
-              toast.warn('New content is available and will be used when all tabs for this page are closed.');
               console.log(
                 'New content is available and will be used when all ' +
                   'tabs for this page are closed. See https://bit.ly/CRA-PWA.'
