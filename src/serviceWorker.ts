@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-const CACHE_NAME = "v2";
+const CACHE_NAME = "v3";
 
 // This optional code is used to register a service worker.
 // register() is not called by default.
@@ -86,7 +86,7 @@ function registerValidSW(swUrl: string, config?: Config) {
     .then(registration => {
       
       registration.onupdatefound = () => {
-        registration.update();
+        registration.update().then(() => window.location.reload());
         console.log(CACHE_NAME);
         const installingWorker = registration.installing;
         if (installingWorker == null) {
