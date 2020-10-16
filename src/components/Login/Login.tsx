@@ -51,7 +51,6 @@ export const Login = () => {
     
     return (
         <section className="login">
-            <LoginBackground />
             <Container>
                 <h1 className="login-hello">Hello<span>.</span></h1>
                 <Form stateToUpdate={[credentials, setCredentials]}>
